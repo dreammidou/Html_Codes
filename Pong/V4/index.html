@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Simple Pong Game — V4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simple Pong Game</h1>
+    <div id="game-container">
+        <canvas id="pong-canvas" width="800" height="500" aria-label="Pong game canvas"></canvas>
+        <div id="controls">
+            <div class="control-row">
+                <label for="score-limit">Score limit:</label>
+                <select id="score-limit">
+                    <option value="1">1</option>
+                    <option value="3">3</option>
+                    <option value="5" selected>5</option>
+                    <option value="7">7</option>
+                    <option value="11">11</option>
+                </select>
+            </div>
+            <div class="control-row">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="control-row">
+                <label for="sound-toggle">Sound:</label>
+                <select id="sound-toggle">
+                    <option value="on" selected>On</option>
+                    <option value="off">Off</option>
+                </select>
+            </div>
+            <div class="control-row">
+                <button id="start-btn">Start / Serve</button>
+                <button id="fullscreen-btn">Fullscreen</button>
+            </div>
+            <div class="control-row">
+                <button id="pause-btn">Pause</button>
+                <button id="restart-btn">Restart</button>
+            </div>
+            <div id="status-line" class="hint">Difficulty: <span id="status-diff">Normal</span> • Sound: <span id="status-sound">On</span></div>
+            <div class="hint">Controls: W/S or Up/Down, or drag on canvas (touch/mouse)</div>
+        </div>
+    </div>
+
+    <div id="overlay" class="hidden" role="dialog" aria-modal="true">
+        <div id="overlay-content">
+            <h2 id="overlay-title">Ready to play</h2>
+            <p id="overlay-sub">Press <strong>Start / Serve</strong> or use the spacebar to begin.</p>
+            <div id="countdown" style="font-size:2rem; margin-top:8px; display:none">3</div>
+            <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                <button id="overlay-start">Start</button>
+                <button id="overlay-restart">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

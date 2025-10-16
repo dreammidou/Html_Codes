@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Pong Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simple Pong Game</h1>
+    <div id="game-container">
+        <canvas id="pong-canvas" width="800" height="500"></canvas>
+        <div id="controls">
+            <div class="control-row">
+                <label for="score-limit">Score limit:</label>
+                <select id="score-limit">
+                    <option value="1">1</option>
+                    <option value="3">3</option>
+                    <option value="5" selected>5</option>
+                    <option value="7">7</option>
+                    <option value="11">11</option>
+                </select>
+            </div>
+            <div class="control-row">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="control-row">
+                <label for="sound-toggle">Sound:</label>
+                <select id="sound-toggle">
+                    <option value="on" selected>On</option>
+                    <option value="off">Off</option>
+                </select>
+            </div>
+            <div class="control-row">
+                <button id="start-btn">Start / Serve</button>
+                <button id="fullscreen-btn">Fullscreen</button>
+            </div>
+            <div class="control-row">
+                <button id="pause-btn">Pause</button>
+                <button id="restart-btn">Restart</button>
+            </div>
+            <div class="hint">Controls: W/S or Up/Down, or drag on canvas (touch/mouse)</div>
+        </div>
+    </div>
+
+    <div id="overlay" class="hidden">
+        <div id="overlay-content">
+            <h2 id="overlay-title">Ready to play</h2>
+            <p id="overlay-sub">Press <strong>Start / Serve</strong> or use the spacebar to begin.</p>
+            <button id="overlay-restart">Restart</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

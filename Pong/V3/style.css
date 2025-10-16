@@ -1,0 +1,106 @@
+body {
+    background: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 16px;
+}
+
+#pong-canvas {
+    background: #111;
+    border: 4px solid #fff;
+    box-shadow: 0 0 12px #000;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#controls {
+    margin-left: 18px;
+    color: #ddd;
+    text-align: left;
+    max-width: 220px;
+    background: rgba(255,255,255,0.03);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.control-row {
+    margin-bottom: 10px;
+}
+
+#controls button, #controls select {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+#controls button:hover { opacity: 0.95; }
+
+#controls label { font-size: 14px; margin-right: 6px; }
+
+#controls .control-row { display: flex; align-items: center; justify-content: space-between; }
+
+#controls .control-row select, #controls .control-row button { flex: 1; margin-left: 8px; }
+
+#controls .control-row button:first-child { margin-left: 0; }
+
+#fullscreen-btn { padding: 6px 8px; font-size: 13px; }
+
+.hint {
+    font-size: 12px;
+    color: #999;
+}
+
+#overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+}
+
+#overlay.hidden { display: none; }
+
+#overlay-content {
+    background: #222;
+    border: 2px solid #fff;
+    padding: 24px 32px;
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+#overlay-content button {
+    margin-top: 12px;
+    padding: 8px 14px;
+    font-size: 16px;
+}
+
+@media (max-width: 700px) {
+    #game-container { flex-direction: column; align-items: center; padding: 12px; }
+    #controls { margin-left: 0; margin-top: 12px; width: 100%; max-width: 420px; }
+    #controls .control-row { flex-wrap: wrap; gap: 8px; }
+    #pong-canvas { width: 100% !important; height: auto !important; }
+}
