@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Level Editor - Mini Mario V2</title>
+<style>body{font-family:Arial;padding:12px;background:#eef} textarea{width:100%;height:60vh;font-family:monospace}</style>
+</head>
+<body>
+  <h2>Level Editor (basic)</h2>
+  <p>Paste or edit the `tiles` array (rows of equal length). Click Export to copy JSON to clipboard.</p>
+  <textarea id="data">[]</textarea>
+  <div style="margin-top:8px">
+    <button id="btn-export">Export JSON</button>
+    <button id="btn-load">Load From levels.json</button>
+  </div>
+  <script>
+    const ta=document.getElementById('data');
+    document.getElementById('btn-export').addEventListener('click',async ()=>{
+      const tiles = ta.value.split('\n');
+      const name = prompt('Level name','New Level');
+      const obj = {id:Date.now(),name, width: tiles[0].length, height: tiles.length, tileSize:32, tiles};
+      await navigator.clipboard.writeText(JSON.stringify(obj, null, 2));
+      alert('Level JSON copied to clipboard');
+    });
+    document.getElementById('btn-load').addEventListener('click', async ()=>{
+      const res = await fetch('levels.json'); const j=await res.json(); if (j.levels && j.levels[0]){ ta.value = j.levels[0].tiles.join('\n') }
+    })
+  </script>
+</body>
+</html>

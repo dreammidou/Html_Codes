@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Mario V2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Mini Mario V2</h1>
+      <div id="menu">
+        <select id="level-select"></select>
+        <button id="btn-start">Start</button>
+        <button id="btn-editor">Level Editor</button>
+      </div>
+    </header>
+
+    <main>
+      <canvas id="game-canvas" width="960" height="540"></canvas>
+      <div id="hud">
+        <div>Level: <span id="level-name">-</span></div>
+        <div>Coins: <span id="coins">0</span></div>
+      </div>
+    </main>
+
+    <footer>
+      <div id="controls">← → or A/D to move, ↑ / Space / W to jump, R to restart</div>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
